@@ -18,7 +18,7 @@ iDVault is a Flutter-based Aadhaar card scanner and management application that 
   - id (auto-increment)
   - aadhaarNumber
   - fullName
-  - mobileNumber
+  - guardianName
   - gender
   - fullAddress
   - createdAt
@@ -46,15 +46,21 @@ iDVault is a Flutter-based Aadhaar card scanner and management application that 
 - `lib/utils/aadhaar_parser.dart` - XML/QR code parsing logic
 
 ### Dependencies Required
-- `sqflite` - SQLite database
-- `image_picker` - Camera and gallery access
-- `file_picker` - File selection
-- `qr_code_scanner` - QR code scanning
-- `xml` - XML parsing
-- `excel` - Excel file creation
-- `path_provider` - File system access
-- `share_plus` - File sharing
-- `permission_handler` - Device permissions
+- `cupertino_icons` - Provides iOS-style icons used in Flutter applications.
+- `google_fonts` - Allows easy use of Google Fonts in Flutter apps.
+- `sqflite` - SQLite plugin for Flutter. Used to store and retrieve data locally.
+- `image_picker` - Enables image selection from camera or gallery.
+- `file_picker` - Allows picking any file from device storage.
+- `mobile_scanner` - High-performance camera scanner for scanning QR codes and barcodes.
+- `archive` - Supports ZIP, GZip, TAR compression and decompression for byte data.
+- `xml` - For parsing Aadhaar XML QR codes and handling XML structured data.
+- `excel` - Helps in generating `.xlsx` Excel reports from app data.
+- `path_provider` - Provides platform-specific file system paths (e.g., app documents directory).
+- `share_plus` - Enables sharing files, text, or links to other apps.
+- `permission_handler` - Manages runtime permissions for camera, storage, etc.
+- `device_info_plus` - Retrieves device-specific information like manufacturer, OS, etc.
+- `google_mlkit_barcode_scanning` - Machine Learning Kit by Google for scanning barcodes & QR codes from images.
+- `pointycastle` - A Dart cryptography library used for secure Aadhaar QR decryption (optional in secure Aadhaar QR parsing).
 
 ### Implementation Flow
 1. **Setup** - Update pubspec.yaml, configure permissions
