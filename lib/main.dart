@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:idvault/screens/splash_screen.dart';
 import 'package:idvault/theme.dart';
-import 'package:idvault/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
