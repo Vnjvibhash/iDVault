@@ -1,13 +1,12 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart'; // For kDebugMode
+import 'package:flutter/foundation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:idvault/models/aadhaar_record.dart';
 import 'package:idvault/utils/aadhaar_parser.dart';
-import 'package:device_info_plus/device_info_plus.dart'; // Needed for SDK version check
+import 'package:device_info_plus/device_info_plus.dart';
 
-// Custom exception for better error handling in the UI
 class PermissionDeniedException implements Exception {
   final String message;
   PermissionDeniedException(this.message);
@@ -40,7 +39,7 @@ class FileService {
       return image != null ? File(image.path) : null;
     } catch (e) {
       if (kDebugMode) print('Failed to capture image: $e');
-      rethrow; // Rethrow to allow UI to handle it
+      rethrow;
     }
   }
 
