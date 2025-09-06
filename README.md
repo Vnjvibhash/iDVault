@@ -1,5 +1,9 @@
 # iDVault - Aadhaar Scanner App Architecture
 
+<p align="center">
+  <img src="assets/images/logo.png?raw=true" alt="iDVault Logo" height="400"/>
+</p>
+
 ## Overview
 iDVault is a Flutter-based Aadhaar card scanner and management application that allows users to scan/upload Aadhaar cards, extract information, and manage records locally with export capabilities.
 
