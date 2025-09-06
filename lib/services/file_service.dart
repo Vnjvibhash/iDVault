@@ -47,7 +47,6 @@ class FileService {
   static Future<File?> pickImageFromGallery() async {
     try {
       List<Permission> permissionsToRequest;
-      // On Android 13+, we need to request specific media permissions.
       if (Platform.isAndroid) {
         final androidInfo = await DeviceInfoPlugin().androidInfo;
         if (androidInfo.version.sdkInt >= 33) {
@@ -103,7 +102,6 @@ class FileService {
 
       final fileSizeBytes = await file.length();
       if (fileSizeBytes > 5 * 1024 * 1024) {
-        // 5MB limit
         throw Exception('File size exceeds the 5MB limit');
       }
 
@@ -125,13 +123,11 @@ class FileService {
 
   /// Process PDF file (placeholder).
   static Future<AadhaarRecord?> processPdfFile(File file) async {
-    // A robust PDF parsing implementation would go here using a library.
     throw Exception('PDF processing is not yet implemented.');
   }
 
   /// Extract text from image (OCR - placeholder).
   static Future<String?> extractTextFromImage(File imageFile) async {
-    // A robust OCR implementation would go here using a library like google_mlkit_text_recognition.
     throw Exception('Image text extraction (OCR) is not yet implemented.');
   }
 }
